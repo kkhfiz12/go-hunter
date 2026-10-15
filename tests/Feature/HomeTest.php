@@ -21,7 +21,6 @@ class HomeTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('Info Nyata Tanpa Tipu');
-        $response->assertSee('Super-App Wisata Bebas Getok Harga');
         $response->assertSee('Destinasi Terpopuler Minggu Ini');
         $response->assertSee('Papan Teman Jalan');
         $response->assertSee('Diskusi Terhangat Komunitas');

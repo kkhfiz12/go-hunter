@@ -5,6 +5,7 @@ namespace App\Models;
 use Database\Factories\DestinationFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Destination extends Model
@@ -18,9 +19,12 @@ class Destination extends Model
      * @var list<string>
      */
     protected $fillable = [
+        'city_id',
         'name',
         'slug',
         'category',
+        'type',
+        'short_description',
         'city',
         'province',
         'address',
@@ -50,6 +54,26 @@ class Destination extends Model
             'parking_fee_motor' => 'decimal:2',
             'parking_fee_car' => 'decimal:2',
         ];
+    }
+
+    /**
+     * Get the city where this destination is located.
+     *
+     * @return BelongsTo<City, $this>
+     */
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    /**
+     * Get all spots (kuliner, oleh-oleh, spot foto) around this destination.
+     *
+     * @return HasMany<Spot, $this>
+     */
+    public function spots(): HasMany
+    {
+        return $this->hasMany(Spot::class);
     }
 
     /**
@@ -140,5 +164,15 @@ class Destination extends Model
             'overpriced' => $reports->where('fairness_level', 'overpriced')->count(),
             'total' => $reports->count(),
         ];
+    }
+
+    /**
+     * Get all urban rally trails targeting this destination.
+     *
+     * @return HasMany<Trail, $this>
+     */
+    public function trails(): HasMany
+    {
+        return $this->hasMany(Trail::class);
     }
 }

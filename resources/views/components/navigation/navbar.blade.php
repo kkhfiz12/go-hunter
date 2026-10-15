@@ -27,6 +27,18 @@
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex items-center gap-1">
                     <a
+                        href="{{ route('eksplor-pedia.index') }}"
+                        class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all {{ request()->routeIs('eksplor-pedia.*') ? 'bg-amber-50 text-amber-600' : 'text-slate-600 hover:text-amber-600 hover:bg-slate-50' }}"
+                    >
+                        Eksplor Pedia
+                    </a>
+                    <a
+                        href="{{ route('urban-rally.index') }}"
+                        class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all {{ request()->routeIs('urban-rally.*') ? 'bg-sky-50 text-sky-600' : 'text-slate-600 hover:text-sky-600 hover:bg-slate-50' }}"
+                    >
+                        Urban Rally
+                    </a>
+                    <a
                         href="{{ Route::has('destinations.index') ? route('destinations.index') : url('/destinations') }}"
                         class="px-3.5 py-2 rounded-xl text-sm font-semibold transition-all {{ request()->routeIs('destinations.index') || (request()->routeIs('destinations.*') && !request()->routeIs('destinations.price-reports.*')) ? 'bg-sky-50 text-sky-600' : 'text-slate-600 hover:text-sky-600 hover:bg-slate-50' }}"
                     >
@@ -199,6 +211,20 @@
         style="display: none;"
     >
         <div class="grid grid-cols-1 gap-1">
+            <a
+                href="{{ route('eksplor-pedia.index') }}"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-semibold {{ request()->routeIs('eksplor-pedia.*') ? 'bg-amber-50 text-amber-600' : 'text-slate-700 hover:bg-slate-50' }}"
+            >
+                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                Eksplor Pedia
+            </a>
+            <a
+                href="{{ route('urban-rally.index') }}"
+                class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-semibold {{ request()->routeIs('urban-rally.*') ? 'bg-sky-50 text-sky-600' : 'text-slate-700 hover:bg-slate-50' }}"
+            >
+                <svg class="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                Urban Rally
+            </a>
             <a
                 href="{{ Route::has('destinations.index') ? route('destinations.index') : url('/destinations') }}"
                 class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-semibold {{ request()->routeIs('destinations.index') || (request()->routeIs('destinations.*') && !request()->routeIs('destinations.price-reports.*')) ? 'bg-sky-50 text-sky-600' : 'text-slate-700 hover:bg-slate-50' }}"

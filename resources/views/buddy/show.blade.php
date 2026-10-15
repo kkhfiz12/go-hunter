@@ -40,7 +40,7 @@
                                 <div class="flex items-center gap-2 mb-2">
                                     @if ($isOpen)
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500 text-white shadow-sm">
-                                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                            <span class="w-2 h-2 rounded-full bg-white"></span>
                                             Open Trip
                                         </span>
                                     @else

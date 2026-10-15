@@ -11,12 +11,6 @@
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 text-center">
-            <!-- Badge Sub-Heading -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span>Super-App Wisata Bebas Getok Harga</span>
-            </div>
-
             <!-- Tagline Title -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight sm:leading-none">
                 Jelajah Tanpa Ragu, <br />
@@ -116,7 +110,7 @@
                     <div>
                         <div class="flex items-center gap-2">
                             <span class="text-xs font-black uppercase tracking-wider text-red-700">Waspada Getok Harga Terkini</span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
                         </div>
                         <div class="text-xs sm:text-sm text-red-900 mt-0.5 space-y-1">
                             @foreach ($recentGetokAlerts as $alert)
@@ -183,7 +177,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
                     <div>
                         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                             <span>Slot Hampir Penuh • Segera Berangkat</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">

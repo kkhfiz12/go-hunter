@@ -22,7 +22,7 @@
                         <span class="text-2xl font-black tracking-tight text-white">Go<span class="text-sky-400">Hunter</span></span>
                     </a>
                     <div class="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-200 text-xs font-semibold backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                         Super-App Wisata Transparan
                     </div>
                 </div>

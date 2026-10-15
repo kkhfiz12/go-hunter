@@ -27,6 +27,8 @@ class User extends Authenticatable
         'bio',
         'phone_number',
         'reputation_points',
+        'total_points',
+        'badge_level',
     ];
 
     /**
@@ -50,6 +52,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'reputation_points' => 'integer',
+            'total_points' => 'integer',
         ];
     }
 
@@ -101,5 +104,57 @@ class User extends Authenticatable
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);
+    }
+
+    /**
+     * Get all spot check-ins for the user.
+     *
+     * @return HasMany<UserCheckin, $this>
+     */
+    public function checkins(): HasMany
+    {
+        return $this->hasMany(UserCheckin::class);
+    }
+
+    /**
+     * Get all quiz histories for the user.
+     *
+     * @return HasMany<QuizHistory, $this>
+     */
+    public function quizHistories(): HasMany
+    {
+        return $this->hasMany(QuizHistory::class);
+    }
+
+    /**
+     * Get all rewards redeemed by the user.
+     *
+     * @return HasMany<UserReward, $this>
+     */
+    public function userRewards(): HasMany
+    {
+        return $this->hasMany(UserReward::class);
+    }
+
+    /**
+     * Calculate and sync the user's badge level based on points.
+     */
+    public function syncBadgeLevel(): string
+    {
+        $points = max($this->total_points, $this->reputation_points);
+
+        $level = match (true) {
+            $points >= 600 => 'Master Penjelajah Sejarah',
+            $points >= 300 => 'Ahli Sejarah Nusantara',
+            $points >= 100 => 'Penjelajah Aktif',
+            default => 'Penjelajah Pemula',
+        };
+
+        if ($this->badge_level !== $level) {
+            $this->badge_level = $level;
+            $this->saveQuietly();
+        }
+
+        return $level;
     }
 }

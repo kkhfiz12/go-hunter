@@ -538,5 +538,11 @@ class DatabaseSeeder extends Seeder
                 'visit_date' => now()->subDays(5)->toDateString(),
             ]
         );
+
+        $this->call([
+            TripySeeder::class,
+            EksplorPediaSeeder::class,
+            UrbanRallySeeder::class,
+        ]);
     }
 }
